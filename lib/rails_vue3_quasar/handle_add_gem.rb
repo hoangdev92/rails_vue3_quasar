@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_vue3_quasar/base_handle'
 
 module RailsVue3Quasar
@@ -10,6 +11,7 @@ module RailsVue3Quasar
       end
 
       run_bundle_install
+      system('bundle exec vite install')
     end
 
     private
