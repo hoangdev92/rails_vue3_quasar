@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
+require 'rails_vue3_quasar/base_handle'
+require 'FileUtils'
+require 'rails_vue3_quasar/constants/constants'
+
 module RailsVue3Quasar
   # class add setting
-  class HandleAddSetting
+  class HandleAddSetting < RailsVue3Quasar::BaseHandle
     def process
       create_dir_fontend
       add_vite_config_ts
@@ -22,22 +26,26 @@ module RailsVue3Quasar
 
     def add_file_app_js
       puts('file app.js will be overwritten')
-      FileUtils.cp('./constants/app.js', "#{project_root}/app/frontend/app.js")
+      source_file = File.expand_path('../rails_vue3_quasar/constants/app.js', __dir__)
+      FileUtils.cp(source_file, "#{project_root}/app/frontend/app.js")
     end
 
     def add_file_i18n_js
       puts('file app.js will be overwritten')
-      FileUtils.cp('./constants/i18n.js', "#{project_root}/app/frontend/i18n.js")
+      source_file = File.expand_path('../rails_vue3_quasar/constants/i18n.js', __dir__)
+      FileUtils.cp(source_file, "#{project_root}/app/frontend/i18n.js")
     end
 
     def add_file_pages_js
       puts('file app.js will be overwritten')
-      FileUtils.cp('./constants/pages.js', "#{project_root}/app/frontend/pages.js")
+      source_file = File.expand_path('../rails_vue3_quasar/constants/pages.js', __dir__)
+      FileUtils.cp(source_file, "#{project_root}/app/frontend/pages.js")
     end
 
     def add_file_vuetify_js
       puts('file app.js will be overwritten')
-      FileUtils.cp('./constants/vuetify.js', "#{project_root}/app/frontend/vuetify.js")
+      source_file = File.expand_path('../rails_vue3_quasar/constants/vuetify.js', __dir__)
+      FileUtils.cp(source_file, "#{project_root}/app/frontend/vuetify.js")
     end
 
     def create_dir_fontend

@@ -1,8 +1,9 @@
 # frozen_string_literal: true
+require 'rails_vue3_quasar/base_handle'
 
 module RailsVue3Quasar
   # class add gem
-  class HandleAddGem < BaseHandle
+  class HandleAddGem < RailsVue3Quasar::BaseHandle
     def process
       gems_to_add.each do |gem_name, gem_version|
         add_gem_to_gemfile(gem_name, gem_version)

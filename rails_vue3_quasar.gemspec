@@ -11,8 +11,8 @@ Gem::Specification.new do |spec|
   spec.email         = %w[devhoanglv92@gmail.com]
 
   spec.summary       = 'Auto add vue3 and quasar to rails project'
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.description   = 'Auto add vue3 and quasar to rails project'
+  spec.homepage      = 'https://github.com/hoangdev92/rails_vue3_quasar'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -33,10 +33,9 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
-  # spec.bindir        = "exe"
-  # spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.bindir        = 'bin'
+  spec.executables   = ['rails_vue3_quasar']
   spec.require_paths = ['lib']
-  spec.executables << 'rails_vue3_quasar'
 
   spec.add_development_dependency "bundler", "~> 1.17"
   spec.add_development_dependency "rake", "~> 10.0"

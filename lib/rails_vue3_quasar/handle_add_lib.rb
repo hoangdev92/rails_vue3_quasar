@@ -1,13 +1,18 @@
 # frozen_string_literal: true
 
+require 'rails_vue3_quasar/base_handle'
+require 'FileUtils'
+require 'rails_vue3_quasar/handle_add_gem'
+require 'rails_vue3_quasar/handle_add_setting'
+require 'rails_vue3_quasar/handle_run_dependency'
+
 module RailsVue3Quasar
-  # class add library
-  class HandleAddLib < BaseHandle
+  # class add library BaseHandle
+  class HandleAddLib < RailsVue3Quasar::BaseHandle
     attr_reader :add_phaser
 
     def initialize(add_phaser)
       @add_phaser = add_phaser
-      super
     end
 
     def process
@@ -16,6 +21,7 @@ module RailsVue3Quasar
       HandleAddGem.process
       HandleAddSetting.process
       HandleRunDepedency.run
+      run_install_lib_by_yarn
     end
 
     private
@@ -39,7 +45,7 @@ module RailsVue3Quasar
     end
 
     def add_file_package_json
-      source_file = './constants/package.json'
+      source_file = File.expand_path('../rails_vue3_quasar/constants/package.json', __dir__)
       destination_file = "#{project_root}/package.json"
 
       if File.exist?(destination_file)
