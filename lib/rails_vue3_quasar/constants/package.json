@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "sass-embedded": "^1.80.2",
+    "vite": "^5.4.11",
+    "vite-plugin-ruby": "^5.1.1"
+  },
+  "dependencies": {
+    "@inertiajs/vue3": "^1.2.0",
+    "@js-from-routes/client": "^1.0.4",
+    "@js-from-routes/inertia": "^1.10.2",
+    "@mdi/font": "^7.4.47",
+    "@quasar/extras": "^1.16.13",
+    "@quasar/vite-plugin": "^1.8.1",
+    "@vitejs/plugin-vue": "^5.2.0",
+    "@vitejs/plugin-vue-jsx": "^4.1.0",
+    "@vue/compiler-sfc": "^3.5.13",
+    "jquery": "^3.7.1",
+    "mitt": "^3.0.1",
+    "pinia": "^2.2.7",
+    "quasar": "^2.17.4",
+    "vite-plugin-full-reload": "^1.2.0",
+    "vite-plugin-vuetify": "^2.0.4",
+    "vue": "^3.5.13",
+    "vue-i18n": "10",
+    "vue-loading-overlay": "^6.0.6",
+    "vue-router": "^4.0.13",
+    "vue3-transitions": "^1.0.0",
+    "vuetify": "^3.7.4"
+  },
+  "scripts": {
+    "dev": "vite --port 8000",
+    "build": "vite build",
+    "serve": "vite preview"
+  }
+}

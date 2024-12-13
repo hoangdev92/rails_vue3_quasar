@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'rails_vue3_quasar'
+
+# Run the updater
+puts 'Running add vue and quasar!!!!!'
+RailsVue3Quasar::RailsVue3.run(*ARGV)
+puts 'Finished add vue and quasar!!!!!'
