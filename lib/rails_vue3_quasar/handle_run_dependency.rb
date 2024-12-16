@@ -2,7 +2,7 @@
 
 module RailsVue3Quasar
   # class handle run dependency
-  class HandleRunDepedency
+  class HandleRunDependency
     MESS = <<-message
 # routes.rb
 Rails.application.routes.draw do

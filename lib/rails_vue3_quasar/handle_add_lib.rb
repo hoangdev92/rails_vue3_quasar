@@ -5,6 +5,8 @@ require 'FileUtils'
 require 'rails_vue3_quasar/handle_add_gem'
 require 'rails_vue3_quasar/handle_add_setting'
 require 'rails_vue3_quasar/handle_run_dependency'
+require 'rails_vue3_quasar/handle_change_routes'
+require 'rails_vue3_quasar/handle_add_setting_vue'
 
 module RailsVue3Quasar
   # class add library BaseHandle
@@ -20,8 +22,10 @@ module RailsVue3Quasar
       add_phaser_lib if add_phaser == '-g'
       HandleAddGem.process
       HandleAddSetting.process
-      HandleRunDepedency.run
+      HandleRunDependency.run
       run_install_lib_by_yarn
+      HandleChangeRoutes.process
+      HandleAddSettingVue.process
     end
 
     private

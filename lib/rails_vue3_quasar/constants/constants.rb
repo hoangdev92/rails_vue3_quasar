@@ -24,4 +24,9 @@ export default defineConfig({
   ],
 })
 vite
+
+INIT_VITE = <<-vite
+import createApp from "../../frontend/app";
+createApp();
+vite
 end

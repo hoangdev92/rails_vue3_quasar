@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.version       = RailsVue3Quasar::VERSION
   spec.authors       = %w[devhoanglv92]
   spec.email         = %w[devhoanglv92@gmail.com]
+  spec.owners        = 'devhoanglv92'
 
   spec.summary       = 'Auto add vue3 and quasar to rails project'
   spec.description   = 'Auto add vue3 and quasar to rails project'
@@ -38,5 +39,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency "bundler", "~> 1.17"
+  spec.add_development_dependency 'rails', '~> 6.0'
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency 'ruby', '~> 2.3'
 end

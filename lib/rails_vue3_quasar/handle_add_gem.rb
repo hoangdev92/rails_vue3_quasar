@@ -11,7 +11,7 @@ module RailsVue3Quasar
       end
 
       run_bundle_install
-      system('bundle exec vite install')
+      exec_vite_install
     end
 
     private
@@ -36,6 +36,9 @@ module RailsVue3Quasar
       return if gemfile_content.include?("gem '#{gem_name}'")
 
       File.open(gemfile_path, 'a') do |file|
+        unless gemfile_content.end_with?("\n")
+          file.puts "\n"
+        end
         if gem_version.is_a?(Hash)
           file.puts "gem '#{gem_name}', '#{gem_version[:version]}', '#{gem_version[:additional_version]}'"
         else
@@ -48,6 +51,10 @@ module RailsVue3Quasar
       puts('Running bundle install...')
       system('bundle install')
       puts('Running bundle install done...')
+    end
+
+    def exec_vite_install
+      system('bundle exec vite install')
     end
 
     def find_gemfile_path
